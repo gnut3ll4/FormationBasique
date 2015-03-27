@@ -14,6 +14,7 @@ public class MainActivity extends ActionBarActivity {
 
     private TextView tvCompteur;
     private Button btnUp;
+    private Button btnDown;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,12 +23,21 @@ public class MainActivity extends ActionBarActivity {
 
         tvCompteur = (TextView) findViewById(R.id.tv_compteur);
         btnUp = (Button) findViewById(R.id.btn_up);
-
+        btnDown = (Button) findViewById(R.id.btn_down);
         btnUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int count = Integer.valueOf((String) tvCompteur.getText());
                 count++;
+                tvCompteur.setText(""+count);
+            }
+        });
+
+        btnDown.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int count = Integer.valueOf((String) tvCompteur.getText());
+                count--;
                 tvCompteur.setText(""+count);
             }
         });
